@@ -48,3 +48,11 @@ Route::get('shopping-cart', function(){
 Route::get('cart', function(){
 	return view('pages.cart');
 });
+
+// route for admin
+Route::get('admin/dashboard', function(){
+	return view('layouts.admin.dashboard');
+});
+
+// route for category
+Route::get('admin/category/create', 'CategoryController@create');
