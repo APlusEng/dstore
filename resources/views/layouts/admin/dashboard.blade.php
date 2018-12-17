@@ -208,7 +208,7 @@
                                             <a class="nav-link" href="{{url('admin/category/create')}}">Add Category <span class="badge badge-secondary">New</span></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="pages/general.html">All Categories</a>
+                                            <a class="nav-link" href="{{url('admin/category/show')}}">All Categories</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="pages/carousel.html">Trashed Categories</a>
@@ -222,7 +222,7 @@
                                 <div id="submenu-3" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="pages/chart-c3.html">Add Product</a>
+                                            <a class="nav-link" href="{{url('admin/product/create')}}">Add Product</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="pages/chart-chartist.html">All Products</a>
@@ -446,27 +446,10 @@
                     <!-- content goes here -->
                     @yield('content')
 
+
                 </div>
             </div>
             <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
-            <div class="footer">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                             Copyright © 2018 Concept. All rights reserved. Dashboard by <a href="https://colorlib.com/wp/">Colorlib</a>.
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                            <div class="text-md-right footer-links d-none d-sm-block">
-                                <a href="javascript: void(0);">About</a>
-                                <a href="javascript: void(0);">Support</a>
-                                <a href="javascript: void(0);">Contact Us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <!-- ============================================================== -->
             <!-- end footer -->
             <!-- ============================================================== -->

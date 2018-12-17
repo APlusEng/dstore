@@ -55,4 +55,12 @@ Route::get('admin/dashboard', function(){
 });
 
 // route for category
-Route::get('admin/category/create', 'CategoryController@create');
+Route::get('admin/category', 'CategoryController@index')->name('category.index');
+Route::get('admin/category/create', 'CategoryController@create')->name('category.create');
+Route::post('admin/category/store', 'CategoryController@store')->name('category.store');
+Route::get('admin/category/edit/{id}', 'CategoryController@edit')->name('category.edit');
+Route::put('admin/category/update/{id}', 'CategoryController@update')->name('category.update');
+Route::delete('admin/category/delete/{id}', 'CategoryController@destroy')->name('category.destroy');
+
+// route for product
+Route::get('admin/product/create', 'ProductController@create');

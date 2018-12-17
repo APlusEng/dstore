@@ -14,7 +14,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $category = Category::all();
+        return view('layouts.admin.category.index', ['category' => $category]);
+        
     }
 
     /**
@@ -35,7 +37,12 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $category = new Category;
+        $category->title = $request->title;
+        $category->slug = $request->slug;
+        $category->description = $request->description;
+        $category->save();
+        return redirect()->route('category.index');
     }
 
     /**
@@ -55,9 +62,10 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit($id)
     {
-        //
+        $category = Category::find($id);
+        return view('layouts.admin.category.edit', ['category' => $category]);
     }
 
     /**
@@ -67,9 +75,14 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, $id)
     {
-        //
+        $category = Category::find($id);
+        $category->title = $request->title;
+        $category->slug = $request->slug;
+        $category->description = $request->description;
+        $category->save();
+        return redirect()->route('layouts.admin.category.index');
     }
 
     /**
@@ -78,8 +91,10 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy()
     {
-        //
+        $category = Category::find($id);
+        $category->delete();
+        return redirect()->route('layouts.admin.category.index');
     }
 }
